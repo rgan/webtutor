@@ -1,6 +1,6 @@
-Developed with Rails 2.0.2, mysql  Ver 14.12 Distrib 5.0.51a
+Create and take simple on-line quizzes.
 
-Instructions for MacOS:
+Instructions for MacOS 10.6:
 1. rvm gemset create webtutor
 2. rvm gemset use webtutor  (gem list should not show any gems)
 3. gem install bundler

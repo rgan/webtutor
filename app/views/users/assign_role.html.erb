@@ -1,0 +1,10 @@
+<h4>Assign a role to user: <%= @user.name %></h4>
+<% form_tag assign_role_url do -%>
+  <p>
+		<label for="role" class="required">Role</label>
+    <%= collection_select(:user_role, :role_id, @roles, :id, :name)%>
+  </p>
+ 	<div class="buttons">
+    <%= submit_tag 'Assign Role To User', :class => 'button' %>
+  </div>
+<% end %>

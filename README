@@ -1,0 +1,18 @@
+Developed with Rails 2.0.2, mysql  Ver 14.12 Distrib 5.0.51a
+
+Instructions for MacOS:
+1. rvm gemset create webtutor
+2. rvm gemset use webtutor  (gem list should not show any gems)
+3. gem install bundler
+4. bundle config build.mysql --with-mysql-dir=/usr/local/mysql --with-mysql-config=/usr/local/mysql/bin/mysql_config
+5. export ARCHFLAGS="-arch i386 -arch x86_64"
+6. export DYLD_LIBRARY_PATH="/usr/local/mysql/lib:$DYLD_LIBRARY_PATH"
+7. bundle install
+8. create database webtutor_development;
+9. create user webtutor@'localhost' identified by 'webtutor';
+10. grant all on webtutor_development.* to webtutor;
+11. rake db:migrate
+12. rake db:seed
+
+To run: rake app:run
+Go to http://localhost:3000/topics/1/topics

@@ -1,0 +1,5 @@
+<div>
+<table><tr><th>Topics</th></tr>
+<%= render(:partial => "topic", :collection => @parent.children, :locals => {:depth => 0})  %>
+</div>
+

@@ -1,0 +1,7 @@
+2 + _ = 4
+25 * _ = 250
+35 + 45 + _ = 90
+What is the sum of all the angles in a triangle? ; [[180, :right], [90, :wrong], [360, :wrong]]
+200 + 89 = _
+99 - 28 = _
+42 / 6 = _

@@ -1,2 +1,5 @@
 .idea/
+log/
 tmp/
+coverage/
+coverage.data

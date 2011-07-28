@@ -1,0 +1,8 @@
+role is tutor, student or admin
+user has many roles
+     - has many results 
+topics has child topics, topic has questions
+results is join table between user and topic
+
+grant all on webtutor_development to 'webtutor'@'localhost' identified by 'webtutor';
+grant all on webtutor_test to 'webtutor'@'localhost' identified by 'webtutor';

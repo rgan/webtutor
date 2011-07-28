@@ -1,0 +1,6 @@
+<h1><%=@topic.name%></h1>
+<p>Your score is <%=sprintf("%.2g", @result.score)%>. You took <%=@result.time_taken_seconds%> seconds.</p>
+    <% @result.questions_with_answers.each_with_index do |q_with_a, i| %>      
+         <%=i+1%>.&nbsp;<%=q_with_a.question.render_with_answer(q_with_a.answer, q_with_a.correct)%> 
+      <%end %>
+ <%=link_to h("Try again"), topic_questions_path(@topic.id)  %>

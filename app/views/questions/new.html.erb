@@ -1,0 +1,19 @@
+<h1>New question</h1>
+<p>Questions are written like: <br>
+"What is the sum of the all the angles in a triangle "; [ ["180", :right], ["90", :wrong], ["360", :wrong]]<br>
+14 + 2 + _ = 20 <br>
+14/2 = _<br>
+2 * 4 = _<br>
+</p>
+<%= @question[Question.inheritance_column] %>
+<% form_for(@question, :url => topic_questions_path(@topic.id)) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+		<%= f.label :content %><br />
+    <%= f.text_area(:content, {:cols => 70}) %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>

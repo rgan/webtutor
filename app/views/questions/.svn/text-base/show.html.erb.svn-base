@@ -1,0 +1,1 @@
+<%= render(:partial => "question", :locals => {:num => 1, :topic_id => @topic.id})  %>  

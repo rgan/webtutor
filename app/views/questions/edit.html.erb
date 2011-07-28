@@ -1,0 +1,17 @@
+<h1>Editing question</h1>
+
+<p>Questions are written like: 
+question "description ...", "first answer choice" => :right, "second answer choice" => :wrong, "third answer choice" => :wrong
+</p>
+
+<% form_for(@question, :url => topic_question_path(@topic.id,  @question.id), :method => :put) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+		<%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>

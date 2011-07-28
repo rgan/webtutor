@@ -1,0 +1,28 @@
+<% form_for(@user) do |f| %>
+  
+  <p>
+		<%= f.label :name %><br />
+    <%= f.text_field :name, :size => 30 %>
+  </p
+
+  <p>
+		<%= f.label :email %><br />
+    <%= f.text_field :email, :size => 30 %>
+  </p
+<span class="hint">It's also your login id.</span>
+
+<p>
+	<%= f.label :password %><br />
+  <%= f.text_field :password, :size => 30 %>
+</p>
+
+<p>
+	<%= f.label :password_confirmation %><br />
+  <%= f.text_field :password_confirmation, :size => 30 %>
+</p>
+<p>
+  <%= f.submit "Create" %>
+</p>
+<% end %>
+                     
+                     

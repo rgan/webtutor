@@ -1,0 +1,27 @@
+<tr><td><% (0..depth).each { %> &nbsp;&nbsp; <%} 
+	  if topic.has_questions? %> 
+        <%=link_to h(topic.name), topic_questions_path(topic.id)  %>
+           <% if @user.is_tutor %>
+            &nbsp;&nbsp; <%=link_to '[+q]', new_topic_question_path(topic.id) %>
+           <% end %>
+		 <% if @user.is_student %>
+            &nbsp;&nbsp; <%=topic.average_score(@user)%>
+           <% end %>
+    <% else 
+         if topic.has_children? %>
+         <%= h(topic.name)  %>
+           <% if @user.is_tutor %>
+            &nbsp;&nbsp; <%=link_to '[+t]', new_topic_topic_path(topic.id) %>
+           <% end %>
+       <% else %>
+          <%= h(topic.name)  %>
+          <% if @user.is_tutor %>
+               &nbsp;&nbsp; <%=link_to '[+t]', new_topic_topic_path(topic.id) %>
+               &nbsp;&nbsp;<%=link_to '[+q]', new_topic_question_path(topic.id) %>
+              <% end %>
+     <% end %>
+<% end %>
+</td></tr>
+<%= render(:partial => "topic", :collection =>  topic.children, :locals => {
+        :depth => depth + 1} ) %>
+

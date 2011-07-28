@@ -1,0 +1,6 @@
+ <%=num%>.&nbsp;<%= question.render() %>
+<% if @user.is_tutor %>
+     &nbsp;&nbsp; <%=link_to 'Edit', edit_topic_question_path(topic_id, question.id) %>
+ &nbsp;&nbsp; <%=link_to 'Delete', topic_question_path(topic_id, question.id), :method => :delete %>
+<% end %>
+     <br>

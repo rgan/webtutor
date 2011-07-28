@@ -1,0 +1,11 @@
+<h1><%=h(@topic.name)%></h1>
+<% form_for(Question.new, :url => answers_topic_questions_path(@topic.id)) do |f|  %> 
+    <% i=1 
+       for question in @questions %>      
+         <%= render(:partial => "question", :object => question, :locals => {:num => i, :topic_id => @topic.id}) %>
+    <% i = i + 1 
+    end %>
+  <% if @questions.size > 0 %>
+  <%= submit_tag "Submit"%>
+  <% end %>
+<% end %>

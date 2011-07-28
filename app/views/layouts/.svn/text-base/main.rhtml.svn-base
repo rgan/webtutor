@@ -1,0 +1,25 @@
+<html>
+<title>WebTutor</title>
+<%= stylesheet_link_tag "webtutor" %>
+<body>
+   <div id="banner">
+	<% if session[:user_id] %>
+	  <div id="logout" align="right">
+	   User:&nbsp;<%=session[:user_name]%>&nbsp;&nbsp;&nbsp;
+	   <% if @user.is_admin %>
+			<%= link_to 'Assign Role', assign_role_url %>
+	   <% end %>
+	   <%= link_to 'log out', session_url, :method => :delete %></div>
+	 <% end %>
+    <h1 align="center">WebTutor</h1> 
+   </div>
+   <div id="main">
+       <% if flash[:notice] %>
+         <div id="error"> <%= flash[:notice] %> </div>
+       <% end %>
+       <%= yield :layout %>
+     </div>
+ </body>
+</html>
+
+     
